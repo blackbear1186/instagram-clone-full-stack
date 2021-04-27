@@ -1,0 +1,60 @@
+$inputColor: #FAFAFA;
+$borderColor: #DBDBDB;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: sticky;
+  height: 54px;
+  border-bottom: 1px solid $borderColor;
+  display: flex;
+  background: #FFFFFF;
+  
+  .header-container {
+    display: flex;
+    justify-content: space-around;
+    min-width: 545px;
+    width: 1000px;
+    align-items: center;
+    margin: auto;
+  }
+  .header {
+    // margin: 1em;
+    font-family: 'Lobster', cursive;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .search {
+    margin: .8em;
+    border: .5px solid $borderColor;
+    border-radius: 3px;
+    input {
+      padding: .4em;
+      width: 15em;
+      background-color: $inputColor;
+      border: none;
+    }
+  }
+  .icon {
+    height: 22px;
+    width: 21px;
+    margin: .6em;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .profile-icon {
+    height: 22px;
+    width: 21px;
+    margin: .6em;
+    border-radius: 50%;
+    border: .5px solid $borderColor;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

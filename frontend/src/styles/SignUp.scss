@@ -1,0 +1,103 @@
+$borderColor: #DBDBDB;
+$facebookColor: #385185;
+$inputColor: #FAFAFA;
+$textColor: #8E8E8E;
+$buttonColor: #0096F6;
+
+body {
+  background: $inputColor;
+}
+.signup-container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  text-align: center;
+  background-color: $inputColor;
+  .signup-box {
+   
+    margin-top: 2em;
+    height: 550px;
+    width: 100%;
+    border: .5px solid $borderColor;
+    background-color: #FFFFFF;
+  }
+  h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 2.5em;
+  }
+  .signup-text-header {
+    color: #8E8E8E;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto 1em auto;
+  }
+  .facebook-log-btn button {
+    background-color: $buttonColor;
+    border: none;
+    padding: .6em;
+    border-radius: 5px;
+    width: 75%;
+    margin-bottom: 1em;
+    color: #FFFFFF;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+   .form {
+      display: flex;
+      flex-direction: column;
+      input {
+        width: 18em;
+        padding: .8em;
+        background-color: $inputColor;
+        border: none;
+      }
+      .sign-border input {
+        border: .5px solid $borderColor;
+        border-radius: 3px;
+        margin: .5em 0 .5em 0;
+      }
+      button {
+        margin-top: .5em;
+        width: 75%;
+        padding: .6em;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: $buttonColor;
+        border-radius: 5px;
+        border: none;
+        color: #FFFFFF;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+   }
+   .terms {
+     width: 78%;
+     margin: 1em auto auto auto;
+     font-size: .8em;
+     color: $textColor;
+     strong {
+       cursor: pointer;
+     }
+   }
+  .log-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    margin-top: 1em;
+    border: .5px solid $borderColor;
+    width: 100%;
+    background-color: #FFFFFF;
+  }  
+ 
+  footer {
+    position: relative;
+    color: #8E8E8E;
+    margin-top: 9em;
+  }
+}

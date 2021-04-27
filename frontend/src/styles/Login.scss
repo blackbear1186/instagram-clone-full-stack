@@ -1,0 +1,93 @@
+$borderColor: #DBDBDB;
+$facebookColor: #385185;
+$inputColor: #FAFAFA;
+$textColor: #8E8E8E;
+$buttonColor: #0096F6;
+
+body {
+  background: $inputColor;
+}
+.login-container {
+  margin: auto;
+  width: 350px;
+  text-align: center;
+  .login-box {
+    margin-top: 2.5em;
+    height: 400px;
+    width: 100%;
+    border: .5px solid $borderColor;
+    background: #FFFFFF;
+  }
+  h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 2.5em;
+  }
+  .sign-box {
+    margin-top: 1em;
+    height: 70px;
+    width: 100%;
+    border: .5px solid $borderColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+
+  }
+  .get {
+    margin-top: 1.5em;
+  }
+  .form {
+    display: flex;
+      flex-direction: column;
+      input {
+        width: 18em;
+        padding: .8em;
+        background-color: $inputColor;
+        border: none;
+      }
+      .sign-border input {
+        border: .5px solid $borderColor;
+        border-radius: 3px;
+        margin: .5em 0 .5em 0;
+      }
+      button {
+        margin-top: .5em;
+        width: 75%;
+        padding: .6em;
+        margin: .5em auto 1em auto;
+        background-color: $buttonColor;
+        border-radius: 5px;
+        border: none;
+        color: #FFFFFF;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+  }
+  .or {
+    color: #8E8E8E;
+    margin-bottom: 1em;
+  }
+  .facebook {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $facebookColor;
+    margin-bottom: 1em;
+    font-weight: bold;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .forgot {
+    color: $facebookColor;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+  footer {
+    color: #8E8E8E;
+    margin-top: 17em;
+  }
+}

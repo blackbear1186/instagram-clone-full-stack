@@ -1,0 +1,62 @@
+$inputColor: #FAFAFA;
+$borderColor: #DBDBDB;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.home-container {
+  text-align: center;
+  width: 1000;
+  margin-top: 3em;
+  margin-bottom: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .section {
+    .following {
+      height: 118px;
+      width: 614px;
+      margin-bottom: 1.5em;
+      border: .5px solid $borderColor;
+    }
+    .main-content {
+      height: auto;
+      width: 614px;
+      border: .5px solid $borderColor;
+
+      .main-header {
+        height: 60px;
+      border-bottom: .5px solid $borderColor;
+
+      }
+      .main-image {
+        height: 613px;
+      }
+      .main-info {
+        height: 80px;
+        // border-left: .5px solid $borderColor;
+        // border-right: .5px solid $borderColor;
+        .main-icon {
+          height: 40px;
+        }
+        .main-post {
+          height: 100%;
+
+        }
+      }
+      .main-comment {
+        height: 56px;
+      border-top: .5px solid $borderColor;
+
+      }
+    }
+  }
+  .aside {
+    height: 100vh;
+    width: 293px;
+    margin: 0 auto auto 2em;
+    background-color: black;
+  }
+}
