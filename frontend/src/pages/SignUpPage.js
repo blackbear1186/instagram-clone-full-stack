@@ -1,19 +1,20 @@
 import React, {useState, useContext} from "react";
 import { AiFillFacebook } from "react-icons/ai";
 import { Link, useHistory } from "react-router-dom";
+import axios from 'axios'
 
 const SignUpPage = ({user}) => {
 
   const history = useHistory()
 
-  const [email, setEmail] = useState('')
-  // const [name, setName] = useState('')
-  // const [username, setUsername] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
   const handleSignUp = e => {
     e.preventDefault()
-    
+    axios.post('http://localhost:5000/register', {username: username, password: password}).then((response => {
+      console.log(response)
+    }))
   }
 
 
@@ -34,7 +35,7 @@ const SignUpPage = ({user}) => {
         </div>
         <form className="form" onSubmit={handleSignUp}>
           <div className="sign-border">
-            <input value={email} type="email" onChange={(e) => setEmail(e.target.value)} placeholder="Mobile Number or Email" />
+            <input value={username} type="text" name='username' onChange={(e) => setUsername(e.target.value)} placeholder="Mobile Number or Email" />
           </div>
           {/* <div className="sign-border">
             <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Full Name" />

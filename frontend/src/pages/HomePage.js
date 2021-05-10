@@ -1,20 +1,14 @@
 import React, { useContext } from "react";
 // import {Link, useHistory} from 'react-router-dom'
-// import {auth} from '../firebase'
-// import {AppContext} from '../context/AppContext'
 import Header from "../components/Header";
 
-const HomePage = () => {
+const HomePage = ({users}) => {
   // const {user} = useContext(AppContext)
 
-  // const history = useHistory()
-  // const logOut = () => {
-  //   auth.signOut()
-  //   history.push('/login')
-  // }
   return (
     <div className="home-container">
       <section>
+        
         <div className="section">
           <div className="following"></div>
           <div className="main-content">

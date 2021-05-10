@@ -1,10 +1,10 @@
 const mysql = require('mysql')
 const express = require('express')
-const router = express.Router()
+const getusers = express.Router()
 const db = require('../config/db')
 
-router.get('/', (req, res) => {
-  let sql = 'SELECT * FROM user';
+getusers.get('/getusers', (req, res) => {
+  let sql = 'SELECT * FROM users';
   db.query(sql, (err, result) => {
     if(err) throw err
     console.log(result)
@@ -12,4 +12,13 @@ router.get('/', (req, res) => {
   })
 })
 
-module.exports = router;
+// app.get('/alter', (req, res) => {
+//   let sql = 'ALTER TABLE users MODIFY username VARCHAR(50) NOT NULL UNIQUE';
+//   db.query(sql, (err, result) => {
+//     console.log(result)
+//     res.send('Table altered.')
+//   })
+
+// })
+
+module.exports = getusers;

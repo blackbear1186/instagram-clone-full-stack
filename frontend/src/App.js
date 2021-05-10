@@ -6,6 +6,7 @@ import SignUpPage from "./pages/SignUpPage";
 import { AppContext, AppProvider } from "./context/AppContext";
 import HomePage from "./pages/HomePage";
 import Header from './components/Header'
+import axios from 'axios'
 
 function App() {
   const { user, dispatch } = useContext(AppContext);
@@ -31,6 +32,14 @@ function App() {
   //   // clean up operation
   //   unsubscribe();
   // }, []);
+  const [users, setUser] = useState([])
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/getusers').then((response) => {
+      console.log(response.data)
+      setUser(response.data)
+    })
+  }, [])
 
   return (
     <AppProvider>
@@ -43,10 +52,10 @@ function App() {
             <Route path="/signup">
               <SignUpPage />
             </Route>
-            <Route path="/">
+            <Route exact path="/">
               <Header />
 
-              <HomePage />
+              <HomePage users={users}/>
             </Route>
           </Switch>
         </div>
