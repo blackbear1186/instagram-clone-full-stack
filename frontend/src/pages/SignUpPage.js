@@ -1,11 +1,11 @@
-import React, {useState, useContext} from "react";
+import React, {useState} from "react";
 import { AiFillFacebook } from "react-icons/ai";
-import { Link, useHistory } from "react-router-dom";
+import { Link} from "react-router-dom";
 import axios from 'axios'
 
 const SignUpPage = ({user}) => {
 
-  const history = useHistory()
+  // const history = useHistory()
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')

@@ -50,6 +50,15 @@ body {
         border-radius: 3px;
         margin: .5em 0 .5em 0;
       }
+      .danger-border input {
+        border: .5px solid red;
+        border-radius: 3px;
+        margin: .5em 0 .5em 0;
+      }
+      .text-danger {
+        color: red;
+        size: 1em;
+      }
       button {
         margin-top: .5em;
         width: 75%;

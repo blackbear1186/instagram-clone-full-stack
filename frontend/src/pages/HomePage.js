@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 // import {Link, useHistory} from 'react-router-dom'
-import Header from "../components/Header";
+// import Header from "../components/Header";
 
 const HomePage = ({users}) => {
   // const {user} = useContext(AppContext)

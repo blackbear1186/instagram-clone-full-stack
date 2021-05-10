@@ -9,10 +9,7 @@ register.post('/register', (req, res) => {
   const password = req.body.password
 
   let sql = 'INSERT INTO users (username, password) VALUES (?, ?)';
-  // db.query('INSERT INTO users (username, password) VALUES (?, ?)', [username, password],
-  //   (err, result) => {
-  //     console.log(err)
-  //   })
+  
   db.query(sql, [username, password], (err, result) => {
     if(err) throw err;
     console.log(result)
