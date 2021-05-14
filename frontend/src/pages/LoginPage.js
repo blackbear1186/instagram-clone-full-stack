@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, {useState, useEffect } from "react";
 import { AiFillFacebook } from "react-icons/ai";
 import { Link, useHistory } from "react-router-dom";
 import axios from 'axios'
@@ -12,8 +12,8 @@ const LoginPage = () => {
   // const [confirmPasswordLogin, setConfirmPasswordLogin] = useState('')
 
   const [loginMessage, setLoginMessage] = useState('')
-  const [usernameErr, setUsernameErr] = useState([])
-  const [passwordErr, setPasswordErr] = useState([])
+  const [usernameErr, setUsernameErr] = useState('')
+  const [passwordErr, setPasswordErr] = useState('')
   // const [confirmPasswordErr, setConfirmPasswordErr] = useState('')
 
 
@@ -44,7 +44,7 @@ const LoginPage = () => {
   //   }
   // }
 
-
+  axios.defaults.withCredentials = true;
 
   const handleLogin = e => {
   
@@ -57,16 +57,16 @@ const LoginPage = () => {
       } else {
         setLoginMessage('')
       } 
-      // if(usernameLogin.length === 0) {
-      //   setUsernameErr('Please enter your username.')
-      // } else {
-      //   setUsernameErr('')
-      // }
-      // if(passwordLogin.length === 0) {
-      //   setPasswordErr('Please enter your password.')
-      // } else {
-      //   setPasswordErr('')
-      // }
+      if(usernameLogin.length === 0) {
+        setUsernameErr('Please enter your username.')
+      } else {
+        setUsernameErr('')
+      }
+      if(passwordLogin.length === 0) {
+        setPasswordErr('Please enter your password.')
+      } else {
+        setPasswordErr('')
+      }
       // if (confirmPasswordLogin.length === 0) {
       //   setConfirmPasswordErr('Please confirm the password.')
       // } else if(passwordLogin !== confirmPasswordLogin) {
@@ -77,15 +77,24 @@ const LoginPage = () => {
       // usernameError()
       // passwordError()
       // confirmPasswordError()
-      if(!response.data) {
-        history.push('/')
-      }
+      // if(!response.data) {
+      //   history.push('/')
+      // }
       console.log(response.data)
 
     })
   }
 
-
+  useEffect(() => {
+    axios.get('http://localhost:5000/login')
+    .then((response) => {
+      console.log(response)
+      if(response.data.loggedIn === true) {
+        setLoginMessage(response.data[0].username)
+      }
+    })
+  }, [])
+  
   return (
     <div className="login-container">
       <div className="login-box"  >
