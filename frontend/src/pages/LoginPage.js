@@ -80,7 +80,7 @@ const LoginPage = () => {
       // if(!response.data) {
       //   history.push('/')
       // }
-      console.log(response.data)
+      console.log(response)
 
     })
   }
